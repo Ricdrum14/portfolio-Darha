@@ -1,0 +1,50 @@
+<!-- home-page.component.html -->
+<section class="min-h-screen bg-[#fdfaf6] text-gray-900 font-serif">
+    <!-- Header -->
+    <app-header/>
+  
+    <!-- Main Section -->
+    <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Left - Text -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight mb-6">
+          Auteure, <br />
+          Romancière <br />
+          & Poétesse
+        </h1>
+        <p class="mb-6 text-base leading-relaxed">
+          Découvrez les univers riches et les émotions profondes à travers les mots d’Emma Cartier.
+          Plongez dans des récits captivants et des poèmes inspirants.
+        </p>
+        <a routerLink="/contact" class="border border-gray-900 px-5 py-2 text-sm font-medium hover:bg-gray-900 hover:text-white transition">ME CONTACTER</a>
+      </div>
+  
+      <!-- Right - Image -->
+      <div class="flex justify-center">
+        <img src="/assets/images/petite_photo_Ric.jpg" alt="Portrait Emma Cartier" class="w-80 h-auto object-cover rounded shadow-lg" />
+      </div>
+    </div>
+  
+    <!-- Œuvres Section -->
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <h2 class="text-2xl font-semibold mb-8">Œuvres</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Work Card  -->
+        <app-works-list/>
+  
+      </div>
+    </div>
+
+    <!-- Citation inspirante -->
+    <div class="max-w-6xl mx-auto px-6 py-12">
+      <div class="bg-white/70 rounded-lg shadow-md p-6 text-center">
+        <blockquote class="text-xl italic text-gray-700 leading-relaxed">
+          « Les mots sont les ailes de l’âme, ils portent nos silences. »
+        </blockquote>
+        <p class="text-sm text-gray-500 mt-2">– Darha Jhennika Noel</p>
+      </div>
+    </div>
+
+  </section>
+  

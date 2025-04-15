@@ -1,0 +1,21 @@
+  <div class="px-4">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 
+             overflow-x-auto md:overflow-visible flex-nowrap md:grid md:auto-cols-fr"
+    >
+    @for (work of works.slice(0, visibleCount); track work.id) {
+      <app-works [work]="work" class="shrink-0 md:shrink md:w-full min-w-[250px]" />
+    }
+    </div>
+  
+    <!-- Bouton toggle -->
+    <div *ngIf="works.length > 4" class="hidden md:flex justify-center mt-6">
+      <button
+        (click)="toggleVisibility()"
+        class="border border-gray-900 px-5 py-2 text-sm font-medium hover:bg-gray-900 hover:text-white transition"
+      >
+        {{ isExpanded ? 'Voir moins' : 'Voir plus' }}
+      </button>
+    </div>
+  </div>
+  

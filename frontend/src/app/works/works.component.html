@@ -1,0 +1,6 @@
+<div class="work-card" (click)="OnReadWork()">
+  <img [src]="work.imageURL" [alt]="work.title" />
+  <h3 class="font-bold text-sm mb-1">{{ work.title }}</h3>
+  <p class="text-sm mb-2">{{ work.description }}</p>
+  <span class="text-sm underline">Lire →</span>
+</div>
