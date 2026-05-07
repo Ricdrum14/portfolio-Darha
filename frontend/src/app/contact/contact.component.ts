@@ -1,12 +1,37 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
 export class ContactComponent {
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
 
+  sendEmail(): void {
+    emailjs.send(
+      'service_8o5m5bn',
+      'template_l1t4qxt',
+      this.formData,
+      'C6pOONfmccbftjOnQ'
+    ).then(
+      () => {
+        alert('✉️ Message envoyé avec succès !');
+        this.formData = { name: '', email: '', message: '' };
+      },
+      (error) => {
+        console.error('Erreur:', error);
+        alert('❌ Échec de l’envoi. Merci de réessayer.');
+      }
+    );
+  }
 }
